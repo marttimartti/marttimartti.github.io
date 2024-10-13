@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:tan
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Off-screen menu*/
+.off-screen-menu {
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    transition: .3s ease;
+    z-index: 1000;
+}
+
+.off-screen-menu a {
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.off-screen-menu-active {
+    right: 0; 
+}
+
+/* Styles for (X) Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.image-section {
+    position: relative;
+    text-align: center;
+    flex: 1;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(15, 13, 13);
+    padding: 20px;
+}
+
+.plain-text {
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 5rem;
+    text-align: center;
+}
+
+.linkedin-logo {
+    height: 40px;
+    width: 40px;
+}
+
+@media (min-width: 769px) {
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .image-section {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .plain-text {
+        flex: 1;
+        max-width: 50%;
+        padding-left: 2rem;
+        text-align: left;
+    }
+
+    .image-text {
+        font-size: 3.5rem;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+    }
+
+@media (max-width: 768px) {
+    .image-text {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    .plain-text {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .image-section, .plain-text {
+        max-width: 100%;
+    }}}
